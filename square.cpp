@@ -1,22 +1,21 @@
 #include <stdio.h>
+
 int main() {
-	int n,i;
+	int n;
+	int i;
 	
-	//input the upper limit n
-	printf ("enter a positive integer n");
+	printf("enter a positive integer:");
 	scanf("%d", &n);
 	
-	printf("number\tresult\n");
-	printf("-----------------\n");
+	if (n<=0) {
+		printf("plese enter a positive integer greather than 0.\n");
+		return 1;
+	}
+	printf("\nnumber\tsquare\tcube\n");
+	printf("----------------------------\n");
 	
-	for (i =1; i <=n; i++) {
-		if (i% 2==0) {
-			//even number - print cube
-			printf("%d\t%d\n", i,i*i*i);
-		}else{
-			//odde number - print square
-			printf("%d\t%d\n",i,i*i);
-		}
+	for (i=1; i<=n; i++) {
+		printf("%d\t%d\t%d\n", i,i*i,i*i*i);
 	}
 	return 0;
 }
